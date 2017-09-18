@@ -25,3 +25,9 @@ yarn-error.log*
 .idea
 .vscode
 yarn.lock
+yarn-error.log
+package-lock.json
+
+/server/render/render.js
+/server/render/static/
+

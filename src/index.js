@@ -1,8 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Root from './client/Root';
 import registerServiceWorker from './registerServiceWorker';
+import { AppContainer } from 'react-hot-loader';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './index.css';
+
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root')
+  )
+}
+
+render(Root);
+
+
+if (module.hot) {
+  module.hot.accept('./client/Root', () => { render(Root) })
+}
+
+
 registerServiceWorker();
